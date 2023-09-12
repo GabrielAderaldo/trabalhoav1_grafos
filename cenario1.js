@@ -31,17 +31,19 @@ function busca_largura(grafo,seed,whoFind){
         listQ.push(isWhoISeach)
         if(verify_list.includes(isWhoISeach) || (isWhoISeach == whoFind)){
          if(isWhoISeach == whoFind){
-            listQ.push(";")
+            console.log(listQ)
+            return 200
          }
         }else{
             for(let i=0; i < grafo[isWhoISeach].length; i++){
-                list.push(grafo[isWhoISeach][i])
+                if(!verify_list.includes(grafo[isWhoISeach][i])){
+                    list.push(grafo[isWhoISeach][i])
+                }
             }
             verify_list.push(isWhoISeach) 
          }
         
     }
-    console.log(listQ)
     return 404
 }
 
